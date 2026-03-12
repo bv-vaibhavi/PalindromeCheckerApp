@@ -1,11 +1,6 @@
 public class PalindromeChecker {
     public static void main(String[] args) {
-        String str="madam";
-        String rev=new StringBuilder(str).reverse().toString();
-
-        if(str.equals(rev))
-            System.out.println("Palindrome");
-        else
-            System.out.println("Not Palindrome");
+        System.out.println("Welcome to Palindrome checker App");
+        System.out.println("Version 1.0");
     }
 }
