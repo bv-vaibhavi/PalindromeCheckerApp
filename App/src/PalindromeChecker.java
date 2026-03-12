@@ -1,4 +1,4 @@
-// UC3: Palindrome check using char array and two-pointer technique
+// UC4: Character Array Based Palindrome Check
 
 public class PalindromeChecker {
 
@@ -7,16 +7,16 @@ public class PalindromeChecker {
         String word = "madam";
 
         // Step 1: Convert string to char array
-        char[] chars = word.toCharArray();
+        char[] characters = word.toCharArray();
 
-        // Step 2: Two-pointer technique
         int start = 0;
-        int end = chars.length - 1;
+        int end = characters.length - 1;
 
         boolean isPalindrome = true;
 
+        // Step 2: Two-pointer comparison
         while (start < end) {
-            if (chars[start] != chars[end]) {
+            if (characters[start] != characters[end]) {
                 isPalindrome = false;
                 break;
             }
