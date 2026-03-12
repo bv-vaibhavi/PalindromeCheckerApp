@@ -1,28 +1,31 @@
-// UC5: Stack-Based Palindrome Checker
-
-import java.util.Stack;
+// UC3: Palindrome check using char array and two-pointer technique
 
 public class PalindromeChecker {
 
     public static void main(String[] args) {
 
         String word = "madam";
-        Stack<Character> stack = new Stack<>();
 
-        // Step 1: Push characters into stack
-        for (int i = 0; i < word.length(); i++) {
-            stack.push(word.charAt(i));
+        // Step 1: Convert string to char array
+        char[] chars = word.toCharArray();
+
+        // Step 2: Two-pointer technique
+        int start = 0;
+        int end = chars.length - 1;
+
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
         }
 
-        // Step 2: Pop characters to form reversed string
-        String reversed = "";
-
-        while (!stack.isEmpty()) {
-            reversed = reversed + stack.pop();
-        }
-
-        // Step 3: Compare original and reversed
-        if (word.equals(reversed)) {
+        // Step 3: Print result
+        if (isPalindrome) {
             System.out.println(word + " is a Palindrome");
         } else {
             System.out.println(word + " is NOT a Palindrome");
