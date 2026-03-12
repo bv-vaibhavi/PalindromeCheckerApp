@@ -1,20 +1,34 @@
-public class PalindromeCheckerApp {
+// UC3: Palindrome check using char array and two-pointer technique
+
+public class PalindromeChecker {
 
     public static void main(String[] args) {
 
-        String original = "madam";   // hardcoded string
-        String reversed = "";
+        String word = "madam";
 
-        // Step 1: Reverse the string using a loop
-        for (int i = original.length() - 1; i >= 0; i--) {
-            reversed = reversed + original.charAt(i);
+        // Step 1: Convert string to char array
+        char[] chars = word.toCharArray();
+
+        // Step 2: Two-pointer technique
+        int start = 0;
+        int end = chars.length - 1;
+
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
         }
 
-        // Step 2: Compare original and reversed
-        if (original.equals(reversed)) {
-            System.out.println(original + " is a Palindrome");
+        // Step 3: Print result
+        if (isPalindrome) {
+            System.out.println(word + " is a Palindrome");
         } else {
-            System.out.println(original + " is NOT a Palindrome");
+            System.out.println(word + " is NOT a Palindrome");
         }
     }
 }
